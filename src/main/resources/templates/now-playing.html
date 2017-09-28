@@ -6,5 +6,11 @@
 </head>
 <body>
 
+<tr data-th-each="movie : ${movies}">
+    <td data-th-text="${widget.name}">...</td>
+    <td data-th-text="${widget.version}">...</td>
+    <img width ="150px" src="${movie.posterpath}"/>
+</tr>
+
 </body>
 </html>
