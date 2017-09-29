@@ -1,5 +1,4 @@
 package com.theironyard.springTMDBWebAPP;
-
 import java.util.List;
 
 public class ResultsPage {

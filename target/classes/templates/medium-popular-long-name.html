@@ -10,9 +10,14 @@
 
 <a href="home">Home</a>
 
+
 <div th:each="movie : ${movies}">
+
     <div th:text="${movie.title}"></div>
     <img width ="150px" th:src="${movie.posterPath}"/>
+
 </div>
+
+
 </body>
 </html>

@@ -2,17 +2,20 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
-    <title>MPLN</title>
+    <title>Now Playing</title>
 </head>
 <body>
 
-<h1>Medium popularity, long names.</h1>
+<h1>Now Playing!</h1>
 
 <a href="home">Home</a>
 
 <div th:each="movie : ${movies}">
+
     <div th:text="${movie.title}"></div>
     <img width ="150px" th:src="${movie.posterPath}"/>
+
 </div>
+
 </body>
 </html>
