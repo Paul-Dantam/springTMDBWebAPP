@@ -7,8 +7,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Movie {
 
     private String title;
-    @JsonProperty
+    @JsonProperty("poster_path")
     private String posterPath;
+    private static final String imageBase = "https://image.tmdb.org/t/p/w500";
     private String overview;
     private double popularity;
 
@@ -35,7 +36,7 @@ public class Movie {
     }
 
     public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
+        this.posterPath = imageBase+posterPath;
     }
 
     public String getOverview() {

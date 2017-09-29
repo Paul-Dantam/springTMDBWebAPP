@@ -20,8 +20,6 @@ public class MovieController {
         return "home";
     }
 
-
-
     @RequestMapping(path = "/now-playing", method = RequestMethod.GET)
     public String nowPlaying(Model model) {
         model.addAttribute("movies", getMovies(url));
@@ -31,6 +29,11 @@ public class MovieController {
 
     @RequestMapping(path = "/medium-popular-long-name", method = RequestMethod.GET)
     public String mediumPopularLongName(Model model) {
+        model.addAttribute("movies", getMovies(url)
+                .stream()
+                .filter(e -> e.getTitle().length()>=10)
+                .filter(e ->e.getPopularity()>=30 && e.getPopularity()<=80)
+                .collect(Collectors.toList()));
         return "medium-popular-long-name";
     }
 
